@@ -6,7 +6,7 @@
 * [Java Programming Interviews Exposed Kindle Edition by Noel Markham ](https://panda-myvin.s3.ap-south-1.amazonaws.com/%5BJava+Programming+Interviews+Exposed+Kindle+Edition+by+Noel+Markham+-+2014%5D.pdf)  
 * [Cracking The Tech Career](https://panda-myvin.s3.ap-south-1.amazonaws.com/cracking+the+tech+career.pdf)
 
-  class Student{
+            class Student{
                 private String name;
                 private int marks;
                 public Student(String name,int marks) {
