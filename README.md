@@ -44,3 +44,9 @@
 
 
         System.out.println(list1.stream().collect(Collectors.groupingBy(Student::getName)).toString());
+        
+        
+        
+        
+   output
+        {sham=[Student{name='sham'}, Student{name='sham'}], kam=[Student{name='kam'}, Student{name='kam'}, Student{name='kam'}, Student{name='kam'}], ram=[Student{name='ram'}]}
