@@ -6,20 +6,21 @@
 * [Java Programming Interviews Exposed Kindle Edition by Noel Markham ](https://panda-myvin.s3.ap-south-1.amazonaws.com/%5BJava+Programming+Interviews+Exposed+Kindle+Edition+by+Noel+Markham+-+2014%5D.pdf)  
 * [Cracking The Tech Career](https://panda-myvin.s3.ap-south-1.amazonaws.com/cracking+the+tech+career.pdf)
 
-
-    class Student{
+  class Student{
                 private String name;
-
-                public Student(String name) {
+                private int marks;
+                public Student(String name,int marks) {
                         this.name = name;
+                        this.marks=marks;
 
                 }
 
-            @Override
-            public String toString() {
-                return "Student{" +
-                        "name='" + name + '\'' +
-                        '}';
+            public int getMarks() {
+                return marks;
+            }
+
+            public void setMarks(int marks) {
+                this.marks = marks;
             }
 
             public String getName() {
@@ -31,22 +32,18 @@
                 }
 
         }
-       
+
         List<Student> list1=new ArrayList<>();
-        list1.add(new Student("ram"));
-        list1.add(new Student("sham"));
-        list1.add(new Student("kam"));
-            list1.add(new Student("kam"));
-            list1.add(new Student("kam"));
-            list1.add(new Student("kam"));
-            list1.add(new Student("sham"));
+        list1.add(new Student("ram",1));
+        list1.add(new Student("sham",2));
+        list1.add(new Student("kam",3));
+            list1.add(new Student("kam",4));
+            list1.add(new Student("kam",5));
+            list1.add(new Student("kam",6));
+            list1.add(new Student("sham",7));
 
 
-
-        System.out.println(list1.stream().collect(Collectors.groupingBy(Student::getName)).toString());
+        System.out.println( list1.stream().collect(Collectors.groupingBy(Student::getName,Collectors.mapping(obj->obj.getMarks(), Collectors.toList()))));
         
         
-        
-        
-   output
-        {sham=[Student{name='sham'}, Student{name='sham'}], kam=[Student{name='kam'}, Student{name='kam'}, Student{name='kam'}, Student{name='kam'}], ram=[Student{name='ram'}]}
+{sham=[2, 7], kam=[3, 4, 5, 6], ram=[1]}
