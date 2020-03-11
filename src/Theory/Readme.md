@@ -58,7 +58,58 @@ It is used when there is more than one bean to inject for a particular dependenc
 * Qualifier : Gives the bean a name used while defining and calling.      
 #### Q5)What are the Spring Modules?
 ![](images/SpringModules.png)  
+#### Q6) What are the annotations in Spring?
+* @Component @Service @Repository @Controller
+* @Autowired
+* @Primary
+* @Qualifier
+* @Configuration
 
+#### Q7) What is the simplest way of ensuring that we are using a single version of spring related dependencies?
+A BOM is a special kind of POM that is used to control the versions of a project's dependencies and provide a central place to define and update those versions.
 
+#### Q8)What is DispatcherServlet?
+It acts as a front controller and provides a single entry point for the application
+When DispatcherServlet receives view name, it consults the ViewResolver to find the right view.
 
+#### Q9)How would you exclude packages in a springBoot starter dependency?
+use excludes
 
+#### Q10)Difference between RequestParam & PathVariable?
+   http://localhost:8080/springmvc/hello/101?param1=10&param2=20
+        
+        @RequestMapping("/hello/{id}")    public String getDetails(@PathVariable(value="id") String id,
+            @RequestParam(value="param1", required=true) String param1,
+            @RequestParam(value="param2", required=false) String param2){
+        .......
+        }
+#### Q11)what are the annotations under @SpringBootApplication?
+* @SpringBootConfiguration
+* @EnableAutoConfiguration
+* @ComponentScan
+
+#### Q12)Why is embedded server? Why is it important?
+Easy to deploy the application with an embedded server just need a jar file thats all.
+
+#### Q14)What is the use of Configuration Properties
+
+#### Q15)what is profile ?
+
+#### Q16)What is SpringBootActuator?
+Exposes a lot of details health all sorts of metrics details of garbage collection etc
+#### Q17)What is CommandLineRunner?
+Interface used to indicate that a bean should run when it is contained within a application.
+#### Q18)Why is spring jdbc better than jdbc?
+Spring jdbc we do not need to manage resource all is done by spring also the jdbc template is much more convient.
+#### Q19)What is RowMapper used in Spring for ?
+RowMapper interface allows to map a row of the relations with the instance of user-defined class. It iterates the ResultSet internally and adds it into the collection. So we don't need to write a lot of code to fetch the records as ResultSetExtractor.
+#### Q20)What is Jpa?
+Java Persistence Api it uses object-relation mapping. Internally it uses Entity Manager. Uses Jpql which is much simpler.
+#### Q21)What are the relationship in Jpa?
+* OneToOne
+* OneToMany
+* ManyToMany
+#### Q22)What is the use of @Transactional Annotation
+Would generally perform a roll back if anything fails.
+       
+       
