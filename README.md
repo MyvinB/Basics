@@ -8,10 +8,10 @@
 
 
 
-List<String> a=new ArrayList<>();
-a.add("Cocla");
-a.add("para");
-a.add("dd");
+            List<String> a=new ArrayList<>();
+                a.add("Cocla");
+                a.add("para");
+                a.add("dd");
         Map<String, List<String>> map = new HashMap<>();
         map.put("Ramesh", a);
         map.put("Suresh", a);
