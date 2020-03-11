@@ -7,28 +7,40 @@
 * [Cracking The Tech Career](https://panda-myvin.s3.ap-south-1.amazonaws.com/cracking+the+tech+career.pdf)
 
 
+    class Student{
+                private String name;
 
-            List<String> a=new ArrayList<>();
-                a.add("Cocla");
-                a.add("para");
-                a.add("dd");
-        Map<String, List<String>> map = new HashMap<>();
-        map.put("Ramesh", a);
-        map.put("Suresh", a);
-        map.put("Thanda",a);
+                public Student(String name) {
+                        this.name = name;
 
-        Map<String,List<String>> map1 = new HashMap<>();
-        map1.put("Ramesh", a);
-        map1.put("Suresh", a);
-        map1.put("Thanda",a);
-      
+                }
+
+            @Override
+            public String toString() {
+                return "Student{" +
+                        "name='" + name + '\'' +
+                        '}';
+            }
+
+            public String getName() {
+                        return name;
+                }
+
+                public void setName(String name) {
+                        this.name = name;
+                }
+
+        }
+       
+        List<Student> list1=new ArrayList<>();
+        list1.add(new Student("ram"));
+        list1.add(new Student("sham"));
+        list1.add(new Student("kam"));
+            list1.add(new Student("kam"));
+            list1.add(new Student("kam"));
+            list1.add(new Student("kam"));
+            list1.add(new Student("sham"));
 
 
 
-        //findAny returns a optional object
-        //is present (checks if the list is not empty)
-        //allMatch compares all the elements
-        //Basic logic is comparing all the keys and values in both the maps
-      //  boolean g=map.get("Ramesh").stream().filter(value->(map1.get("Ramesh").stream().allMatch(value1 ->value.equals(value1)))).findAny().isPresent();
-            boolean b=map.keySet().stream().allMatch(value->map1.containsKey(value)&& map.size()==map1.size())  && map.keySet().stream().allMatch(value->map1.get(value).stream().allMatch(num->map.get(value).contains(num))) && map1.keySet().stream().allMatch(value->map.get(value).stream().allMatch(num->map1.get(value).contains(num)));
-            System.out.println(b);
+        System.out.println(list1.stream().collect(Collectors.groupingBy(Student::getName)).toString());
