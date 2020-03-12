@@ -48,6 +48,19 @@ public class Greeter {
         Greeting greetPandaLambda=()-> System.out.println("Panda greeting");
         greetLambda.perform();
         greetPandaLambda.perform();
+     
+               Greeting hello=()-> System.out.println("I love lambda");
+        Greeting innerClassGreeting =new Greeting() {
+            @Override
+            public void perform() {
+                System.out.println("Hello World");
+            }
+        };
+
+        innerClassGreeting.perform();
+        hello.perform();
+     
+        
 
     }
 }
