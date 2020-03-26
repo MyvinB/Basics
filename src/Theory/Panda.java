@@ -1,3 +1,5 @@
+package Theory;
+
 abstract class PandaAbstract extends Panda {
     //implementation of abstract and non abstract methods
     abstract String chicken();
